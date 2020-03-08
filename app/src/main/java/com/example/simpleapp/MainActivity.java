@@ -19,10 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText email = findViewById(R.id.emailText);
-    EditText password = findViewById(R.id.passText);
-    Button loginB = findViewById(R.id.loginButton);
-    Button signUpB = findViewById(R.id.signUpButton);
+    EditText email;
+    EditText password;
+    Button loginB;
+    Button signUpB;
 
     private final static String TAG = MainActivity.class.toString();
 
@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
+
+        //init buttons and editTexts
+        email = findViewById(R.id.emailText);
+        password = findViewById(R.id.passText);
+        loginB = findViewById(R.id.loginButton);
+        signUpB = findViewById(R.id.signUpButton);
 
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -13,7 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Home extends AppCompatActivity {
 
     private final static String TAG = Home.class.toString();
-    private Button logoutB = findViewById(R.id.logOutButton);
+
+    private Button logoutB;
     private FirebaseAuth mAuth;
 
     @Override
@@ -21,6 +22,11 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mAuth = FirebaseAuth.getInstance();
+
+
+        //init buttons
+        logoutB = findViewById(R.id.logOutButton);
+
         logoutB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
